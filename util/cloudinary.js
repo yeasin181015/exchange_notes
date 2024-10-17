@@ -19,11 +19,10 @@ const uploadOnCloudinary = async (req, res, next) => {
     }
 
     const response = await cloudinary.uploader.upload(file, {
-      resource_type: "auto",
+      resource_type: "raw",
     });
 
-
-    req.cloudinary_url = response.url;
+    req.cloudinary_url = response.secure_url;
     next();
   } catch (err) {
     // fs.unlinkSync(filePath);
