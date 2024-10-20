@@ -75,7 +75,7 @@ exports.getAllResources = async (req, res, next) => {
       include: [
         {
           model: User,
-          attributes: ["fullname"], // Specify the fields you want from the User model
+          attributes: ["name"], // Specify the fields you want from the User model
         },
       ],
     });
